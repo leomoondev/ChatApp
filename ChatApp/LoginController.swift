@@ -7,7 +7,9 @@
 //
 
 import UIKit
-
+import Firebase
+import FirebaseAuth
+import FirebaseDatabase
 class LoginController: UIViewController {
     
     let inputsContainerView: UIView = {
@@ -19,17 +21,56 @@ class LoginController: UIViewController {
         return view
     }()
 
-    let loginRegisterButton: UIButton = {
+    // lazy var gives the access to self
+    lazy var loginRegisterButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = UIColor(r: 80, g: 101, b: 161)
         button.setTitle("Register", for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitleColor(UIColor.white, for: .normal)
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        button.addTarget(self, action: #selector(handleRegister), for: .touchUpInside)
         return button
         
     }()
     
+    func handleRegister() {
+        guard let email = emailTextField.text , let password = passwordTextField.text, let name = nameTextField.text else {
+            print("Form is not valid")
+            return
+        }
+        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
+            
+            if error != nil {
+                print(error!)
+                return
+            }
+            
+            // guard statement would give me access to uid
+            guard let uid = user?.uid else {
+                return
+            }
+            // successfully authenticated user
+            let ref = FIRDatabase.database().reference(fromURL: "https://chatapp-44ec2.firebaseio.com/")
+           //let usersReference = ref.child("users")
+            let usersReference = ref.child("users").child(uid)
+
+            let values = ["name": name, "email": email]
+            //ref.updateChildValues(values, withCompletionBlock: {
+            usersReference.updateChildValues(values, withCompletionBlock: {
+                (err, ref) in
+                if err != nil {
+                    print(err!)
+                    return
+                }
+                
+                print("saved user successfully into firebase db")
+            })
+
+        })
+
+    }
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
@@ -159,6 +200,8 @@ class LoginController: UIViewController {
         //how wide
         loginRegisterButton.widthAnchor.constraint(equalTo: inputsContainerView.widthAnchor).isActive = true
         loginRegisterButton.heightAnchor.constraint(equalToConstant: 35).isActive = true
+        
+        
         
     }
     
