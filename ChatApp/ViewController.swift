@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseDatabase
 
 class ViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        let ref = FIRDatabase.database().reference(fromURL: "https://chatapp-44ec2.firebaseio.com/")
+        ref.updateChildValues(["someValue": 123123])
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(handleLogout))
         
     }
