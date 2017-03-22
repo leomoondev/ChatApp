@@ -12,6 +12,7 @@
 		DAB7B2C81E791B59003B70AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB7B2C61E791B59003B70AA /* Main.storyboard */; };
 		DAB7B2CA1E791B59003B70AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DAB7B2C91E791B59003B70AA /* Assets.xcassets */; };
 		DAB7B2CD1E791B59003B70AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAB7B2CB1E791B59003B70AA /* LaunchScreen.storyboard */; };
+		DAB7B2D61E791D72003B70AA /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7B2D51E791D72003B70AA /* LoginController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		DAB7B2C91E791B59003B70AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DAB7B2CC1E791B59003B70AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DAB7B2CE1E791B59003B70AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAB7B2D51E791D72003B70AA /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		DAB7B2C11E791B59003B70AA /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				DAB7B2D41E791D57003B70AA /* Controller */,
 				DAB7B2C21E791B59003B70AA /* AppDelegate.swift */,
 				DAB7B2C41E791B59003B70AA /* ViewController.swift */,
 				DAB7B2C61E791B59003B70AA /* Main.storyboard */,
@@ -62,6 +65,14 @@
 				DAB7B2CE1E791B59003B70AA /* Info.plist */,
 			);
 			path = ChatApp;
+			sourceTree = "<group>";
+		};
+		DAB7B2D41E791D57003B70AA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				DAB7B2D51E791D72003B70AA /* LoginController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DAB7B2C51E791B59003B70AA /* ViewController.swift in Sources */,
+				DAB7B2D61E791D72003B70AA /* LoginController.swift in Sources */,
 				DAB7B2C31E791B59003B70AA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
