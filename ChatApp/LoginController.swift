@@ -64,46 +64,6 @@ class LoginController: UIViewController {
         
     }
     
-    
-    func handleRegister() {
-        guard let email = emailTextField.text, let password = passwordTextField.text, let name = nameTextField.text else {
-            print("Form is not valid")
-            return
-        }
-        
-        FIRAuth.auth()?.createUser(withEmail: email, password: password, completion: { (user: FIRUser?, error) in
-            
-            if error != nil {
-                print(error!)
-                return
-            }
-            
-            // guard statement would give me access to uid
-            guard let uid = user?.uid else {
-                return
-            }
-            // successfully authenticated user
-            let ref = FIRDatabase.database().reference(fromURL: "https://chatapp-44ec2.firebaseio.com/")
-           //let usersReference = ref.child("users")
-            let usersReference = ref.child("users").child(uid)
-
-            let values = ["name": name, "email": email]
-            //ref.updateChildValues(values, withCompletionBlock: {
-            usersReference.updateChildValues(values, withCompletionBlock: {
-                (err, ref) in
-                if err != nil {
-                    print(err!)
-                    return
-                }
-                
-                print("saved user successfully into firebase db")
-                self.dismiss(animated: true, completion: nil)
-
-            })
-
-        })
-
-    }
     let nameTextField: UITextField = {
         let tf = UITextField()
         tf.placeholder = "Name"
@@ -140,11 +100,16 @@ class LoginController: UIViewController {
         return tf
     }()
     
-    let profileImageView: UIImageView = {
+    // 'lazy var' which enables to to access the 'self' within the closure block
+    lazy var profileImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "bear")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
+        
+        imageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleSelectProfileImageView)))
+        
+        imageView.isUserInteractionEnabled = true
         return imageView
     } ()
     

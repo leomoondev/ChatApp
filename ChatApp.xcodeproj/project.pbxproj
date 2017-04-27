@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BB6ECEE4C07654B8184395C8 /* Pods_ChatApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E3425812CAFEE0F33138903 /* Pods_ChatApp.framework */; };
+		DA436F851EB26CC900DD3EDC /* LoginController+Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA436F841EB26CC900DD3EDC /* LoginController+Handler.swift */; };
 		DA99DCF31E8331A000D99D83 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = DA99DCF21E8331A000D99D83 /* GoogleService-Info.plist */; };
 		DAB7B2C31E791B59003B70AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7B2C21E791B59003B70AA /* AppDelegate.swift */; };
 		DAB7B2C51E791B59003B70AA /* MessagesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB7B2C41E791B59003B70AA /* MessagesController.swift */; };
@@ -23,6 +24,7 @@
 		2653AEC1015968AEABAAB1B8 /* Pods-ChatApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.debug.xcconfig"; sourceTree = "<group>"; };
 		2E3425812CAFEE0F33138903 /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98FEF661B36C208BA73E46B0 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
+		DA436F841EB26CC900DD3EDC /* LoginController+Handler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "LoginController+Handler.swift"; sourceTree = "<group>"; };
 		DA99DCF21E8331A000D99D83 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DAB7B2BF1E791B59003B70AA /* ChatApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DAB7B2C21E791B59003B70AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DA436F831EB263BE00DD3EDC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DAEF5EA31E836CCB0095EC3E /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		DAB7B2B61E791B59003B70AA = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		DAB7B2C11E791B59003B70AA /* ChatApp */ = {
 			isa = PBXGroup;
 			children = (
+				DA436F831EB263BE00DD3EDC /* Model */,
 				DAB7B2D41E791D57003B70AA /* Controller */,
 				DAB7B2C21E791B59003B70AA /* AppDelegate.swift */,
 				DAB7B2C41E791B59003B70AA /* MessagesController.swift */,
@@ -87,7 +98,6 @@
 				DAB7B2CB1E791B59003B70AA /* LaunchScreen.storyboard */,
 				DAB7B2CE1E791B59003B70AA /* Info.plist */,
 				DA99DCF21E8331A000D99D83 /* GoogleService-Info.plist */,
-				DAEF5EA31E836CCB0095EC3E /* User.swift */,
 			);
 			path = ChatApp;
 			sourceTree = "<group>";
@@ -97,6 +107,7 @@
 			children = (
 				DAB7B2D51E791D72003B70AA /* LoginController.swift */,
 				DAEF5EA11E8366800095EC3E /* NewMessageController.swift */,
+				DA436F841EB26CC900DD3EDC /* LoginController+Handler.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -237,6 +248,7 @@
 			files = (
 				DAEF5EA21E8366800095EC3E /* NewMessageController.swift in Sources */,
 				DAB7B2C51E791B59003B70AA /* MessagesController.swift in Sources */,
+				DA436F851EB26CC900DD3EDC /* LoginController+Handler.swift in Sources */,
 				DAB7B2D61E791D72003B70AA /* LoginController.swift in Sources */,
 				DAEF5EA41E836CCB0095EC3E /* User.swift in Sources */,
 				DAB7B2C31E791B59003B70AA /* AppDelegate.swift in Sources */,
