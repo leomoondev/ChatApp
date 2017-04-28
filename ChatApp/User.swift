@@ -13,6 +13,6 @@ class User: NSObject {
     //will hold the reference to name and email
     var name: String?
     var email: String?
-    var profileImageUrl: String?
+    var profileImageURL: String?
     
 }

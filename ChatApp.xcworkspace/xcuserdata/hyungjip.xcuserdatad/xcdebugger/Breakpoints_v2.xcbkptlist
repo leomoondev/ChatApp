@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ChatApp/LoginController+Handler.swift"
-            timestampString = "515021308.765708"
+            filePath = "ChatApp/Extensions.swift"
+            timestampString = "515031109.560492"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "handleRegister()"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "loadImageUsingCacheWithUrlString(urlString:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -43,9 +43,9 @@ extension LoginController : UIImagePickerControllerDelegate, UINavigationControl
                         return
                     }
                     
-                    if let profileImageURL = metadata?.downloadURL()?.absoluteString {
+                    if let profileImageUrl = metadata?.downloadURL()?.absoluteString {
                         
-                        let values = ["name": name, "email": email, "profileImageURL": profileImageURL]
+                        let values = ["name": name, "email": email, "profileImageURL": profileImageUrl]
                         self.registerUserIntoDatabaseWithUID(uid: uid, values: values as [String : AnyObject])
                     }
                     
